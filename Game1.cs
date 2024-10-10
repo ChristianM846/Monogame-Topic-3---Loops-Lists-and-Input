@@ -124,10 +124,6 @@ namespace Monogame_Topic_3___Loops__Lists__and_Input
                 }
             }
 
-
-
-
-
             if (mowerSpeed == Vector2.Zero)
             {
                 mowerSoundInstance.Stop();

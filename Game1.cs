@@ -115,6 +115,19 @@ namespace Monogame_Topic_3___Loops__Lists__and_Input
                 }
             }
 
+            for (int i = 0; i < grassTiles.Count; i++)
+            {
+                if (mowerRect.Contains(grassTiles[i]))
+                {
+                    grassTiles.Remove(grassTiles[i]);
+                    i--;
+                }
+            }
+
+
+
+
+
             if (mowerSpeed == Vector2.Zero)
             {
                 mowerSoundInstance.Stop();
@@ -134,6 +147,12 @@ namespace Monogame_Topic_3___Loops__Lists__and_Input
         {
             GraphicsDevice.Clear(Color.LightGreen);
             _spriteBatch.Begin();
+
+            foreach (Rectangle grass in grassTiles)
+            {
+                _spriteBatch.Draw(grassTexture, grass, Color.White);
+            }
+
             _spriteBatch.Draw(mowerTexture, mowerRect, Color.White);
             _spriteBatch.End();
             base.Draw(gameTime);
